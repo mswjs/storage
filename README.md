@@ -13,15 +13,11 @@ $ npm install live-storage
 ### Create storage
 
 ```js
-import { LiveStorage } from 'live-storage'
+import { LiveStorage } from "live-storage";
 
-const posts = new LiveStorage([])
+const posts = new LiveStorage("posts", []);
 
-posts.update((prevPosts) => {
-  prevPosts.concat({
-    title: 'Brave new world',
-  })
-})
+posts.update((prevPosts) => prevPosts.concat({ title: "Brave new world" });
 ```
 
 ## What does this do?
