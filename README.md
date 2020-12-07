@@ -23,13 +23,13 @@ Updates to the storage are synchronized between all active clients in real time.
 ### Install
 
 ```bash
-$ npm install live-storage --save-dev
+$ npm install @mswjs/storage --save-dev
 ```
 
 ### Create storage
 
 ```js
-import { LiveStorage } from 'live-storage'
+import { LiveStorage } from '@mswjs/storage'
 
 // Instantiate a new storage with a unique string key
 // and initial value.

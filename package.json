@@ -1,7 +1,8 @@
 {
-  "name": "live-storage",
+  "name": "@mswjs/storage",
   "version": "0.0.0",
   "description": "Data storage and persistency for testing JavaScript applications",
+  "private": false,
   "main": "lib/index.js",
   "author": "Artem Zakharchenko",
   "license": "MIT",
