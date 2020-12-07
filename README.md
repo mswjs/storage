@@ -1,31 +1,45 @@
 # Live Storage
 
-Data storage and persistency for testing JavaScript applications.
+Data storage and persistency layer for testing JavaScript applications.
+
+## Features
+
+### Persistency
+
+The values of a live storage are persisted in the session. In a browser that is achieved by [`sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage).
+
+### Real-time synchronization
+
+Updates to the storage are synchronized between all active clients in real time. In a browser that is achieved by using a [`BroadcastChannel`](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) to signal updates.
+
+## When to use?
+
+- When writing CRUD operations in tests;
+- When conducting local in-browser testing/debugging;
+- In combination with API mocking tools (i.e. [MSW](https://github.com/mswjs/msw))
 
 ## Get started
 
 ### Install
 
 ```bash
-$ npm install live-storage
+$ npm install live-storage --save-dev
 ```
 
 ### Create storage
 
 ```js
-import { LiveStorage } from "live-storage";
+import { LiveStorage } from 'live-storage'
 
-const posts = new LiveStorage("posts", []);
-
-posts.update((prevPosts) => prevPosts.concat({ title: "Brave new world" });
+// Instantiate a new storage with a unique string key
+// and initial value.
+const posts = new LiveStorage('posts', [])
 ```
 
-## What does this do?
+### Update values
 
-### Persistency
-
-Live storage uses [`sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) for client-side data persistency.
-
-### Live synchronization
-
-Live storage shares all value updates between all opened clients via [`BroadcastChannel`](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel).
+```js
+// Storage update is a function that derives the next value
+// from the previous storage value.
+posts.update((prevPosts) => prevPosts.concat({ title: 'Brave new world' });
+```
