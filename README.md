@@ -1,4 +1,4 @@
-# Live Storage
+# Storage
 
 Data storage and persistency layer for testing JavaScript applications.
 
