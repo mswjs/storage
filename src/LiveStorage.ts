@@ -5,7 +5,10 @@ interface BroadcastChannelMessageType<ValueType> {
   }
 }
 
-const IS_BROWSER = typeof window !== 'undefined'
+// Jest jsdom contains `window` object in Node => detect required features
+const IS_BROWSER =
+  typeof BroadcastChannel !== 'undefined' &&
+  typeof sessionStorage !== 'undefined'
 
 export class LiveStorage<ValueType> {
   public id: string
