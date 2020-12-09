@@ -13,6 +13,7 @@
   "scripts": {
     "clean": "rimraf ./lib",
     "build": "yarn clean && tsc",
+    "test": "jest",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
