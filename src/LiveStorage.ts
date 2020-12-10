@@ -12,7 +12,7 @@ const IS_BROWSER =
 
 export class LiveStorage<ValueType> {
   public id: string
-  public value: ValueType
+  private value: ValueType
 
   private channel: BroadcastChannel | null
 
@@ -80,6 +80,8 @@ export class LiveStorage<ValueType> {
       this.broadcastValue(this.value)
     }
   }
+
+  getValue = () => this.value
 
   private serialize = (value: ValueType): string => {
     return JSON.stringify(value)

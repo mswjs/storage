@@ -43,3 +43,9 @@ const posts = new LiveStorage('posts', [])
 // from the previous storage value.
 posts.update((prevPosts) => prevPosts.concat({ title: 'Brave new world' });
 ```
+
+### Get value
+
+```js
+console.log(posts.getValue())
+```
