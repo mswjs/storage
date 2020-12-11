@@ -47,5 +47,5 @@ posts.update((prevPosts) => prevPosts.concat({ title: 'Brave new world' });
 ### Get value
 
 ```js
-console.log(posts.getValue())
+posts.getValue() // [{ title: 'Brave new world' }]
 ```
