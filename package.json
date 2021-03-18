@@ -1,7 +1,7 @@
 {
   "name": "@mswjs/storage",
   "version": "0.0.1",
-  "description": "Data storage and persistency for testing JavaScript applications",
+  "description": "Persistence and live synchronization layer for testing JavaScript applications.",
   "private": false,
   "main": "lib/index.js",
   "author": "Artem Zakharchenko",
@@ -11,17 +11,17 @@
     "lib"
   ],
   "scripts": {
+    "test": "jest",
     "clean": "rimraf ./lib",
     "build": "yarn clean && tsc",
-    "test": "jest",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.21",
     "jest": "^26.6.3",
     "rimraf": "^3.0.2",
-    "rollup": "^2.41.5",
-    "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   }
 }

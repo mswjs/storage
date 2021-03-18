@@ -1,8 +1,21 @@
 import { LiveStorage } from './LiveStorage'
 
-test('REAME example', () => {
-  const posts = new LiveStorage('posts', [] as any[])
-  posts.update((prevPosts) => prevPosts.concat({ title: 'Brave new world' }))
+interface Book {
+  title: string
+}
 
-  expect(posts.getValue()).toEqual([{ title: 'Brave new world' }])
+describe('getValue', () => {
+  it('returns the initial value when no value exists', () => {
+    const books = new LiveStorage<Book[]>('books', [])
+    expect(books.getValue()).toEqual([])
+  })
+
+  it('returns the latest value when exists', () => {
+    const books = new LiveStorage<Book[]>('books', [])
+    books.update((prevBooks) =>
+      prevBooks.concat({ title: 'The Lord of The Rings' }),
+    )
+
+    expect(books.getValue()).toEqual([{ title: 'The Lord of The Rings' }])
+  })
 })
