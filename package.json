@@ -11,14 +11,17 @@
     "lib"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "yarn test:node && yarn test:browser",
+    "test:node": "jest --forceExit",
+    "test:browser": "jest -c jest.browser.config.ts --forceExit",
     "clean": "rimraf ./lib",
     "build": "yarn clean && tsc",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build && yarn test"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
     "jest": "^26.6.3",
+    "page-with": "^0.3.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",

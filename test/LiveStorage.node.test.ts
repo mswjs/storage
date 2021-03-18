@@ -1,4 +1,4 @@
-import { LiveStorage } from './LiveStorage'
+import { LiveStorage } from '../src/LiveStorage'
 
 interface Book {
   title: string
