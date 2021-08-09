@@ -1,3 +1,5 @@
+> **Please note that this library is about to be discontinued. Please prefer using the [@mswjs/data](https://github.com/mswjs/data) package that provides data modeling capabilities, querying client, and data persistency. Thank you.**
+
 # Storage
 
 Data storage and persistency layer for testing JavaScript applications.
